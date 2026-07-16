@@ -61,4 +61,4 @@ st.markdown("""
 """)
 
 # 누르면 진짜 상담센터 홈페이지로 슝~ 날아가는 '어디로든 문(링크 버튼)'을 만들어요.
-st.link_button("🌐 청소년사이버상담센터 바로가기", "https://cyber1388.kr")
+st.link_button("🌐 청소년상담1388 바로가기", "https://www.1388.go.kr")

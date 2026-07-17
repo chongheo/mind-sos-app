@@ -10,17 +10,18 @@ st.set_page_config(page_title="마음 SOS 구급상자", page_icon="💖", layou
 # ==========================================
 with st.sidebar:
     st.header("✨ 우리 팀 소개")
-    st.write("**팀명:** (마음 SOS 구조대 팀!)")
-    st.write("**콘텐츠 기획:** (김현진)")
-    st.write("**파이썬 개발:** (김준환,이준우)")
+    st.write("**팀명:** 마음 SOS 구조대 팀!")
+    st.write("**콘텐츠 기획:** 김현진")
+    st.write("**파이썬 개발:** 김준환, 이준우")
     st.markdown("---")
     st.header("💡 앱을 만든 이유")
-    st.write("학업과 진로, 친구 관계등으로 지친 중학생 친구들 특히 사춘기 청소년들에게 진짜 와닿는 따뜻한 위로를 전하고 싶어서 만들었습니다.")
+    st.write("학업과 진로, 친구 관계 등으로 지친 중학생 친구들, 특히 사춘기 청소년들에게 진짜 와닿는 따뜻한 위로를 전하고 싶어서 만들었습니다.")
 
 # 2. 메인 화면 간판
 st.title("💖 마음 SOS 구조대")
 st.write("지금 혼자서 감당하기 힘든 고민이나 외로움이 있나요? 당신의 마음에 작은 쉼표를 선물합니다.")
-st.srite("너무 마음이 힘드시나요? 이해해요! 그리고 잠시 엄마의 어떤 사랑이 가장 좋았는지 기억해 보세요.")
+# st.srite 로 오타가 났던 부분을 st.write 로 수정했습니다!
+st.write("너무 마음이 힘드시나요? 이해해요! 그리고 잠시 엄마의 어떤 사랑이 가장 좋았는지 기억해 보세요.")
 st.markdown("---")
 
 # 3. 가벼운 마음 상태 체크
@@ -41,7 +42,7 @@ st.markdown("---")
 
 # 4. 핵심 기능: AI 맞춤 위로
 st.subheader("📝 내 마음 털어놓기 (맞춤 처방전)")
-st.write("오늘 어떤 일이 있었는지, 어떤 기분인지 편하게 적어주세요. 구급상자가 당신의 마음을 읽고 꼭 맞는 위로를 전해줄게요.")
+st.write("오늘 어떤 일이 있었는지, 어떤 기분인지 편하게 적어주세요. 구조대가 당신의 마음을 읽고 꼭 맞는 위로를 전해줄게요.")
 
 user_story = st.text_area("여기에 고민을 적어보세요:", height=150)
 
@@ -60,11 +61,11 @@ if st.button("💝 맞춤 위로 처방전 받기"):
         # ==========================================
         if "성적" in user_story or "시험" in user_story or "학원" in user_story:
             st.success("오늘 하루도 공부하느라 진짜 고생 많았어! 지금은 아무 생각 말고 푹 쉬어. 점수가 너의 가치를 결정하는 건 아니야.")
-            st.balloons() # 응원과 축하의 의미로 화면에 풍선이 날아오릅니다!
+            st.balloons() 
 
         elif "가족" in user_story or "엄마" in user_story or "잔소리" in user_story:
             st.success("제일 가까운 가족이랑 부딪히면 참 속상하지. 네 잘못 아니야. 좋아하는 음악 들으면서 기분 전환해 봐.")
-            st.snow() # 마음을 차분하게 가라앉혀주는 눈 내림 효과!
+            st.snow() 
             
         elif "친구" in user_story or "다툼" in user_story:
             st.success("친구 문제로 마음이 무겁겠네. 인간관계가 제일 힘든 법이지. 비 온 뒤에 땅이 굳어지듯 더 좋은 관계가 될 수 있을 거야.")
@@ -73,11 +74,6 @@ if st.button("💝 맞춤 위로 처방전 받기"):
         elif "진로" in user_story or "미래" in user_story or "불안" in user_story:
             st.success("미래가 불안한 건 네가 그만큼 네 삶을 진지하게 고민하고 있다는 증거야. 넌 충분히 잘 해낼 거야!")
             st.balloons()
-
-        # 💡 코딩 담당 학생들! 기획자가 가져온 단어를 아래처럼 추가해 보세요!
-        # elif "기획자가찾은단어" in user_story:
-        #     st.success("기획자가 적어준 위로 문구")
-        #     st.balloons() 또는 st.snow()
 
         else:
             st.success(f"네 이야기를 들려줘서 고마워. {random.choice(default_messages)}")
